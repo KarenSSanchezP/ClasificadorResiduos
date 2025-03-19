@@ -35,8 +35,14 @@ def predecir_imagen(image_path):
     return prediccion[0]
 
 # Ruta de la imagen a predecir (ajusta la ruta según tu estructura)
-image_path = "./data/cardboard/cardboard16.jpg"
+image_path = "./dataPrueba/papelPrueba.jpg"
+
+categoria = {
+    0: "cartón",
+    1: "papel",
+    2: "plastico"
+}
 
 # Obtener la predicción
 categoria_predicha = predecir_imagen(image_path)
-print(f"La categoría predicha para la imagen es: {categoria_predicha}")
+print(f"La categoría predicha para la imagen es: {categoria[categoria_predicha]}")
