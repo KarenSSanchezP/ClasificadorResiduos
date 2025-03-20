@@ -4,41 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clasificador de Residuos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        #result {
-            margin-top: 20px;
-            font-size: 1.5em;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Clasificador de Residuos</h1>
-    <input type="file" id="fileInput" accept="image/*">
-    <button onclick="uploadImage()">Subir y Predecir</button>
-    <div id="result"></div>
-
+<body class="flex items-center justify-center h-screen bg-gradient-to-br from-blue-500 to-blue-700 text-white">
+    <div class="bg-white text-gray-900 p-8 rounded-2xl shadow-lg w-96 text-center animate-fade-in">
+        <h1 class="text-2xl font-bold mb-4">Clasificador de Residuos</h1>
+        <input type="file" id="fileInput" accept="image/*" class="w-full border p-2 rounded-lg mb-4" onchange="previewImage()">
+        <img id="preview" class="hidden mx-auto mb-4 rounded-lg max-h-40" alt="Vista previa">
+        <button onclick="uploadImage()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
+            Subir y Predecir
+        </button>
+        <div id="result" class="mt-4 text-lg font-semibold"></div>
+    </div>
     <script>
+        function previewImage() {
+            const fileInput = document.getElementById('fileInput');
+            const preview = document.getElementById('preview');
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+        
         function uploadImage() {
             const fileInput = document.getElementById('fileInput');
             const file = fileInput.files[0];
+            if (!file) {
+                document.getElementById('result').innerText = 'Por favor, selecciona una imagen';
+                return;
+            }
+            
             const reader = new FileReader();
             reader.onloadend = function() {
                 const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
-                console.log("Imagen en Base64:", base64String);
                 fetch('http://127.0.0.1:5000/predict', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ image: base64String })
                 })
                 .then(response => response.json())
@@ -46,11 +52,21 @@
                     document.getElementById('result').innerText = `La categoría predicha para la imagen es: ${data.categoria}`;
                 })
                 .catch(error => {
+                    document.getElementById('result').innerText = 'Error en la predicción';
                     console.error('Error:', error);
                 });
             };
             reader.readAsDataURL(file);
         }
     </script>
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.5s ease-out;
+        }
+    </style>
 </body>
 </html>
