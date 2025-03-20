@@ -1,11 +1,11 @@
-# Clasificador de Residuos
+# Clasificador Inteligente de Residuos Reciclables
 
-Este proyecto consiste en el desarrollo de un modelo de clasificación de residuos utilizando técnicas de Machine Learning. Se implementará un modelo basado en Random Forest para clasificar imágenes de residuos en tres categorías principales: cartón, papel y plástico.
+Este proyecto consiste en el desarrollo de un modelo de clasificación de residuos utilizando técnicas de Machine Learning. Se implementará un modelo basado en Random Forest para clasificar imágenes de residuos en tres categorías principales: cartón, papel y plástico. El objetivo es facilitar la separación de residuos reciclables mediante un sistema automatizado que pueda ser aplicado en aplicaciones web. Para el entrenamiento del modelo, se utilizará un dataset de imágenes de residuos previamente etiquetadas.
 
 ## Tabla de contenidos
 
 1. [Nombre](#Nombre)
-2. [Descripción](#descripción)
+2. [Descripción](#Descripción)
 3. [Arquitectura](#Arquitectura)
 4. [Proceso](#Proceso)
 5. [Funcionalidades](#Funcionalidades)
@@ -13,35 +13,43 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación de residu
 7. [Agradecimientos](#Agradecimientos)
 
 
-* Nombre del proyecto
+### Nombre
+* Clasificador Inteligente de Residuos Reciclables
 
-* Breve descripción del proyecto -> Alguna imagen o gif que muestre el proyecto
+### Descripción
+Este proyecto consiste en el desarrollo de un modelo de clasificación de residuos utilizando técnicas de Machine Learning. Se implementará un modelo basado en Random Forest para clasificar imágenes de residuos en tres categorías principales: cartón, papel y plástico. El objetivo es facilitar la separación de residuos reciclables mediante un sistema automatizado que pueda ser aplicado en aplicaciones web. Para el entrenamiento del modelo, se utilizará un dataset de imágenes de residuos previamente etiquetadas.
 
-* Arquitectura del proyecto + imagen
+![ProyectoGIF](img/ProyectoGIF.gif)
 
-* Proceso de desarrollo:
+### Arquitectura
+- La arquitectura del proyecto se puede visualizar a través del siguiente diagrama de despliegue: - (Pendiente)
+    ![DiagramaDespliegue](img/DiagramaDespliegue.png)
 
-- Fuente del dataset: https://huggingface.co/datasets/garythung/trashnet
+- El funcionamiento del proyecto se puede visualizar a través del siguiente diagrama de flujo: - (Pendiente)
+    ![Flujograma](img/Flujograma.png)
 
-- Limpieza de datos (img que lo valide)
+### Proceso
 
-- Manejo excepciones/control errores
+* **Fuente del dataset:** https://huggingface.co/datasets/garythung/trashnet
 
-- Estadísticos (Valores, gráficos, …)
+* **Limpieza de datos:**
+    ![LimpiezaDeDatos](img/LimpiezaDeDatos.png)
 
-* Funcionalidades extra:
+* **Manejo excepciones / control errores:** - (Pendiente)
+    ![ManejoExcepciones](img/ManejoExcepciones.png)
 
-Ejem 1: Integración del proyecto en una pág web
-- Tecnología/Herramientas usadas …
-- Arquitectura (img)
+* **Estadísticos (Valores, gráficos, …):** - (Pendiente)
 
-Ejem 3: Integración del proyecto en un canal WhatsApp, Discord, Telegram, Correo, …
-- Tecnología/Herramientas usadas …
-- Arquitectura (img)
+### Funcionalidades
 
-Ejem 4: Desarrollo de interfaz gráfica de usuario
-- Tecnología/Herramientas usadas …
-- Arquitectura (img)
+* **Funcionalidades extra:**
 
-Ejem …: …
-- Tecnología/Herramientas usadas …
+**Integración del proyecto en una página web**
+* Tecnología / Herramientas usadas: - (Pendiente)
+* Arquitectura (img): - (Pendiente)
+
+### Estado del proyecto
+En proceso de desarrollo
+
+### Agradecimientos
+(Pendiente)
