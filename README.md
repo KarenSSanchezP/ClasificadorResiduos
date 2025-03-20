@@ -42,13 +42,13 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación de residu
 
 ### Funcionalidades
 
-* **Funcionalidades extra:**
+- **Integración del proyecto en una página web**
+    - Enlace a la página web: [Clasificador de Residuos Inteligente]() - (Pendiente el link)
+    - Tecnología/Herramientas usadas: HTML, CSS, Tailwind, Flask, Netlify.
+    - Arquitectura (img): La arquitectura del proyecto junto con la integración en una página web se puede visualizar a través del siguiente diagrama de despliegue.
+    ![DiagramaDespliegueWeb](img/DiagramaDespliegueWeb.png)
 
-**Integración del proyecto en una página web**
-* Tecnología / Herramientas usadas: - (Pendiente)
-* Arquitectura (img): - (Pendiente)
-
-### Estado del proyecto
+### EstadoDelProyecto
 En proceso de desarrollo
 
 ### Agradecimientos
