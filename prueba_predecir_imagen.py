@@ -4,7 +4,7 @@ import numpy as np
 import base64
 
 # Cargar el modelo entrenado desde el archivo pickle
-with open("modelo_random_forest.pkl", "rb") as model_file:
+with open("./modelo_random_forest.pkl", "rb") as model_file:
     clf = pickle.load(model_file)
 
 # Tamaño deseado para las imágenes 
@@ -35,7 +35,7 @@ def predecir_imagen(image_path):
     return prediccion[0]
 
 # Ruta de la imagen a predecir (ajusta la ruta según tu estructura)
-image_path = "./dataPrueba/papelPrueba.jpg"
+image_path = "./dataPrueba/cartonPrueba.jpg"
 
 categoria = {
     0: "cartón",
