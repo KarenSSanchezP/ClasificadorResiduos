@@ -6,16 +6,30 @@
     <title>Clasificador de Residuos</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex items-center justify-center h-screen bg-gradient-to-br from-blue-500 to-blue-700 text-white">
-    <div class="bg-white text-gray-900 p-8 rounded-2xl shadow-lg w-96 text-center animate-fade-in">
-        <h1 class="text-2xl font-bold mb-4">Clasificador de Residuos</h1>
-        <input type="file" id="fileInput" accept="image/*" class="w-full border p-2 rounded-lg mb-4" onchange="previewImage()">
-        <img id="preview" class="hidden mx-auto mb-4 rounded-lg max-h-40" alt="Vista previa">
-        <button onclick="uploadImage()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300">
-            Subir y Predecir
-        </button>
-        <div id="result" class="mt-4 text-lg font-semibold"></div>
+<body class="flex flex-col items-center min-h-screen bg-gradient-to-br from-blue-500 to-blue-700 text-white">
+    <div class="w-full max-w-4xl p-4 space-y-6">
+        <div class="bg-white text-gray-900 p-8 rounded-2xl shadow-lg text-center animate-fade-in transition duration-500 ease-in-out transform hover:scale-105">
+            <h1 class="text-3xl font-bold">Clasificador Inteligente de Residuos</h1>
+        </div>
+        
+        <div class="bg-white text-gray-900 p-8 rounded-2xl shadow-lg text-center animate-fade-in transition duration-500 ease-in-out transform hover:scale-105">
+            <p class="text-lg text-gray-700"><strong>Objetivo: </strong>Desarrollar un modelo de clasificación de residuos basado en Machine Learning que identifique y categorice imágenes de desechos en cartón, papel y plástico, para optimizar su separación en el proceso de reciclaje.</p>
+        </div>
+        
+        <div class="bg-white text-gray-900 p-6 rounded-2xl shadow-lg text-center animate-fade-in max-w-md mx-auto">
+            <input type="file" id="fileInput" accept="image/*" class="w-full border p-2 rounded-lg mb-4 transition duration-300 ease-in-out transform hover:scale-105" onchange="previewImage()">
+            <img id="preview" class="hidden mx-auto mb-4 rounded-lg max-h-40 shadow-lg transition-opacity duration-500" alt="Vista previa">
+            <button onclick="uploadImage()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition duration-300 ease-in-out transform hover:scale-105">
+                Subir y Predecir
+            </button>
+            <div id="result" class="mt-4 text-lg font-semibold transition-opacity duration-500"></div>
+        </div>
+        
+        <div class="bg-white text-gray-900 p-4 rounded-2xl shadow-lg text-center animate-fade-in transition duration-500 ease-in-out transform hover:scale-105">
+            <footer class="text-lg font-bold">Samsung Innovation Campus - Pythoners</footer>
+        </div>
     </div>
+    
     <script>
         function previewImage() {
             const fileInput = document.getElementById('fileInput');
@@ -26,6 +40,7 @@
                 reader.onload = function(e) {
                     preview.src = e.target.result;
                     preview.classList.remove('hidden');
+                    preview.classList.add('opacity-100');
                 };
                 reader.readAsDataURL(file);
             }
@@ -49,7 +64,7 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('result').innerText = `La categoría predicha para la imagen es: ${data.categoria}`;
+                    document.getElementById('result').innerText = `La imagen que proporcionó es: ${data.categoria}`;
                 })
                 .catch(error => {
                     document.getElementById('result').innerText = 'Error en la predicción';
