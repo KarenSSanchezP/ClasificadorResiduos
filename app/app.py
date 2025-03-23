@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app)
 
 # Cargar el modelo entrenado desde el archivo pickle
-ruta_modelo = os.path.join(os.getcwd(), "modelo_random_forest.pkl")
+ruta_modelo = os.path.join(os.getcwd(), "app", "modelo_random_forest.pkl")
 with open(ruta_modelo, "rb") as model_file:
     clf = pickle.load(model_file)
 
