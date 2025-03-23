@@ -40,7 +40,7 @@ Este proyecto consiste en el desarrollo de un modelo de clasificación de residu
 
 * **Estadísticos (Valores, gráficos, …):**
     - Cálculo de la precisión del modelo (75%):
-        ![PrecisCalculoPrecisionión](img/CalculoPrecision.png)
+        ![CalculoPrecision](img/CalculoPrecision.png)
     - Accuracy, Precision, Recall, F1-Score:
         ![Valores](img/Valores.png)
     - Grafico de Valores (Precision, Recall, F1-Score):
