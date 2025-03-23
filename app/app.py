@@ -4,12 +4,14 @@ import pickle
 import cv2
 import numpy as np
 import base64
+import os
 
 app = Flask(__name__)
 CORS(app)
 
 # Cargar el modelo entrenado desde el archivo pickle
-with open("./modelo_random_forest.pkl", "rb") as model_file:
+ruta_modelo = os.path.join(os.getcwd(), "modelo_random_forest.pkl")
+with open(ruta_modelo, "rb") as model_file:
     clf = pickle.load(model_file)
 
 # Tamaño deseado para las imágenes 
